@@ -1,4 +1,4 @@
-# Project Title
+# VIRTUAL-PET
 
 One Paragraph of project description goes here
 
