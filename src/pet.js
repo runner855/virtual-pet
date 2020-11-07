@@ -3,6 +3,10 @@ const FITNESS_INCREASE = 4;
 const FITNESS_DECREASE = 3;
 const AGE_INCREASE = 1;
 const HUNGER_INCREASE = 5;
+const HUNGER_DECREASE = 3;
+const MAXIMUM_HUNGER = 0;
+
+
 
 function Pet(name) {
     this.name = name;
@@ -24,6 +28,14 @@ Pet.prototype.walk = function() {
         this.fitness = MAXIMUM_FITNESS;
 
     } 
+};
+
+Pet.prototype.feed = function() {
+    if((this.hunger - HUNGER_DECREASE ) >= MAXIMUM_HUNGER) {
+        this.hunger -= HUNGER_DECREASE;
+    }else {
+        this.hunger = MAXIMUM_HUNGER;
+    }
 };
 
 

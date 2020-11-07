@@ -66,6 +66,17 @@ describe('growUp', () => {
     });
 });
 
+describe('feed', () => {
+    it('decrease the hunger level to a maximum of 0', () => {
+        const pet = new Pet('Fido');
+
+        pet.hunger = 2;
+        pet.feed();
+
+        expect(pet.hunger).toEqual(0);
+    })
+})
+
 
 
     
