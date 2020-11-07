@@ -3,21 +3,31 @@ function Pet(name) {
     this.age = 0;
     this.hunger = 0;
     this.fitness = 10;
- }
-// GETTING OLDER
- Pet.prototype.growUp = function () {
+}
+
+ Pet.prototype.growUp = function() {
      this.age += 1;
- };
-// GETTING HUNGRIER
- Pet.prototype.feeding = function () {
-     this.hunger += 5;
- };
+    this.hunger += 5;
+    this.fitness -= 3;
+};
+
+Pet.prototype.walk = function() {
+    if((this.fitness + 4) <= 10 ) {
+        this.fitness += 4;
+    } else  {
+        this.fitness = 10;
+
+    } 
+};
+
+
+
+
  
- //GETTING LESS FIT
-Pet.prototype.feelingFit = function () {
-        this.fitness -= 3;
-    };
-     
+ 
+ 
+
+ 
 
 
 
