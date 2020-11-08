@@ -15,11 +15,12 @@ function Pet(name) {
     this.fitness = MAXIMUM_FITNESS;
 }
 
- Pet.prototype.growUp = function() {
-     this.age += AGE_INCREASE;
-    this.hunger += HUNGER_INCREASE;
-    this.fitness -= FITNESS_DECREASE;
-};
+Pet.prototype = {
+    get isAlive() {
+      return this.age < 30 && this.hunger < MAXIMUM_FITNESS && this.fitness > MAXIMUM_HUNGER;
+    }
+  };
+
 
 Pet.prototype.walk = function() {
     if((this.fitness + FITNESS_INCREASE) <= MAXIMUM_FITNESS ) {
@@ -27,8 +28,19 @@ Pet.prototype.walk = function() {
     } else  {
         this.fitness = MAXIMUM_FITNESS;
 
-    } 
+    }
 };
+
+    
+
+
+
+ Pet.prototype.growUp = function() {
+     this.age += AGE_INCREASE;
+    this.hunger += HUNGER_INCREASE;
+    this.fitness -= FITNESS_DECREASE;
+};
+
 
 Pet.prototype.feed = function() {
     if((this.hunger - HUNGER_DECREASE ) >= MAXIMUM_HUNGER) {
@@ -50,6 +62,9 @@ Pet.prototype.checkUp = function() {
 
   }
 };
+
+
+
 
 
 
