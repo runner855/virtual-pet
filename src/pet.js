@@ -1,4 +1,4 @@
-const MAXIMUM_FITNESS = 10;
+
 const FITNESS_INCREASE = 4;
 const FITNESS_DECREASE = 3;
 const AGE_INCREASE = 1;
@@ -12,21 +12,24 @@ function Pet(name) {
     this.name = name;
     this.age = 0;
     this.hunger = 0;
-    this.fitness = MAXIMUM_FITNESS;
+    this.fitness = 10;
 }
 
 Pet.prototype = {
     get isAlive() {
-      return this.age < 30 && this.hunger < MAXIMUM_FITNESS && this.fitness > MAXIMUM_HUNGER;
+      return this.age < 30 && this.hunger < 10 && this.fitness > MAXIMUM_HUNGER;
     }
   };
 
 
 Pet.prototype.walk = function() {
-    if((this.fitness + FITNESS_INCREASE) <= MAXIMUM_FITNESS ) {
+
+    if (!this.isAlive) {
+        throw new Error('Your pet is no longer alive :(');
+      }if((this.fitness + FITNESS_INCREASE) <= 10 ) {
         this.fitness += FITNESS_INCREASE;
     } else  {
-        this.fitness = MAXIMUM_FITNESS;
+        this.fitness = 10;
 
     }
 };
@@ -36,6 +39,11 @@ Pet.prototype.walk = function() {
 
 
  Pet.prototype.growUp = function() {
+
+    if (!this.isAlive) {
+        throw new Error('Your pet is no longer alive :(');
+      }
+
      this.age += AGE_INCREASE;
     this.hunger += HUNGER_INCREASE;
     this.fitness -= FITNESS_DECREASE;
@@ -43,6 +51,11 @@ Pet.prototype.walk = function() {
 
 
 Pet.prototype.feed = function() {
+
+    if (!this.isAlive) {
+        throw new Error('Your pet is no longer alive :(');
+      }
+
     if((this.hunger - HUNGER_DECREASE ) >= MAXIMUM_HUNGER) {
         this.hunger -= HUNGER_DECREASE;
     }else {
@@ -51,14 +64,18 @@ Pet.prototype.feed = function() {
 };
 
 Pet.prototype.checkUp = function() {
-  if(this.hunger  >= 5 && this.fitness <= 3) {
-      return "I am hungry AND I need a walk";
-  } else if(this.hunger >= 5 ) {
+
+    if (!this.isAlive) {
+        throw new Error ('Your pet is no longer alive :(');
+    }else if(this.fitness  <= 3 && this.hunger >= 5) {
+        return "I am hungry AND I need a walk";
+    } else if (this.fitness <= 3 ) {
+        return "I need a walk";
+    } else if(this.hunger >= 5 ) {
       return "I am hungry";
-  } else if (this.fitness <= 3 ) {
-      return "I need a walk";
-  } else if(this.fitness  > 3 && this.hunger < 5  ) {
-      return "I feel great!";
+    }else  {
+        return "I feel great!";
+  
 
   }
 };
