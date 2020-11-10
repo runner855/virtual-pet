@@ -106,8 +106,8 @@ describe("checkUp", () => {
   it("if the pet fitness is 3 or less and pet hunger is 5 or more print message", () => {
     const pet = new Pet("Fido");
 
-    pet.hunger = 5;
-    pet.fitness = 3;
+    pet.hunger = 6;
+    pet.fitness = 2;
     
 
     expect(pet.checkUp()).toEqual("I am hungry AND I need a walk");
