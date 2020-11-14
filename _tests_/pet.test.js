@@ -102,6 +102,13 @@ describe("walk", () => {
 
 describe("feed", () => {
 
+  let pet;
+
+  beforeEach(() => {
+    pet = new Pet("Fido")
+
+  })
+
 
   it("decrease the hunger level to a maximum of 0", () => {
     
