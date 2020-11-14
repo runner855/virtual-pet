@@ -1,6 +1,14 @@
 const Pet = require("../src/pet");
 
 describe("constructor", () => {
+
+  let pet;
+
+  beforeEach(() => {
+    pet = new Pet("Fido")
+
+  })
+
   it("returns an object", () => {
     expect(new Pet("Fido")).toBeInstanceOf(Object);
   });
@@ -22,10 +30,17 @@ describe("constructor", () => {
 
 describe("growUp", () => {
 
+  let pet;
+
+  beforeEach(() => {
+    pet = new Pet("Fido")
+
+  })
+
   
 
   it("increments the age by 1", () => {
-    const pet = new Pet("Fido");
+    
 
     pet.growUp();
 
@@ -33,7 +48,7 @@ describe("growUp", () => {
   });
 
   it("increase the hunger by 5", () => {
-    const pet = new Pet("Fido");
+    
 
     pet.growUp();
 
@@ -41,7 +56,7 @@ describe("growUp", () => {
   });
 
   it("decrease the fitness by 3", () => {
-    const pet = new Pet("Fido");
+    
 
     pet.growUp();
 
@@ -49,7 +64,7 @@ describe("growUp", () => {
   });
 
   it('throws an error if the pet is no longer alive', () => {
-    const pet = new Pet('Fido');
+    
 
     pet.age = 30;
 
@@ -60,10 +75,15 @@ describe("growUp", () => {
 
 describe("walk", () => {
 
+  let pet;
+
+  beforeEach(() => {
+    pet = new Pet(' Fido'); 
+  })
  
 
   it("increase fitness to a maximum of 10", () => {
-    const pet = new Pet("Fido");
+    
 
     pet.fitness = 8;
     pet.walk();
@@ -72,7 +92,7 @@ describe("walk", () => {
   });
 
   it('throws an error if the pet is no longer alive', () => {
-    const pet = new Pet(' Fido');
+    
 
     pet.hunger = 10;
 
@@ -84,7 +104,7 @@ describe("feed", () => {
 
 
   it("decrease the hunger level to a maximum of 0", () => {
-    const pet = new Pet("Fido");
+    
 
     pet.hunger = 2;
     pet.feed();
@@ -93,7 +113,7 @@ describe("feed", () => {
   });
 
   it('throws an error if the pet is no longer alive', () => {
-    const pet = new Pet('Fido');
+    
 
     pet.age = 30;
 
@@ -102,9 +122,15 @@ describe("feed", () => {
 });
 
 describe("checkUp", () => {
+  let pet;
+
+  beforeEach(() => {
+    pet = new Pet("Fido")
+
+  })
 
   it("if the pet fitness is 3 or less and pet hunger is 5 or more print message", () => {
-    const pet = new Pet("Fido");
+    
 
     pet.hunger = 6;
     pet.fitness = 2;
@@ -114,7 +140,7 @@ describe("checkUp", () => {
   });
 
   it("if the pet fitness is 3 or less print message", () => {
-    const pet = new Pet("Fido");
+    
 
     pet.hunger = 3;
     pet.fitness = 2;
@@ -125,7 +151,7 @@ describe("checkUp", () => {
   });
 
   it("if the pet hunger is 5 or more print message", () => {
-    const pet = new Pet("Fido");
+    
 
     pet.growUp();
 
@@ -134,7 +160,7 @@ describe("checkUp", () => {
 
 
   it("if pet fitness is greater than 3  and pet hunger greater than  5  print message", () => {
-    const pet = new Pet("Fido");
+    
  
     pet.feed();
 
@@ -146,7 +172,7 @@ describe("checkUp", () => {
   
 
   it('throws an error if the pet is no longer alive', () => {
-    const pet = new Pet('Fido');
+    
 
     pet.age = 30;
 
@@ -156,16 +182,23 @@ describe("checkUp", () => {
 });
 
 describe("isAlive", () => {
-  it("if pet hunger is 10 or more and age is 30 or more and  pet fitness is 0 or more return false", () => {
-    const pet = new Pet("Fido");
 
+  let pet;
+
+  beforeEach(() => {
+    pet = new Pet("Fido")
+
+  })
+
+  it("if pet hunger is 10 or more and age is 30 or more and  pet fitness is 0 or more return false", () => {
+    
     pet.hunger = 11;
 
     expect(pet.isAlive).toEqual(false);
   });
 
   it("if pet hunger is less than 10 and age is less than 30 and and fitness is greater than 0 return true", () => {
-    const pet = new Pet("Fido");
+    
 
     
 
