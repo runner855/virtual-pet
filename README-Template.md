@@ -67,7 +67,6 @@ inside the directory you created for the project to initialize it as a git repos
 Run 
 
 ```
-
 npm install -D jest
 ```
 to install Jest as a development depency
@@ -97,25 +96,32 @@ node
 ```
 in your terminal where you can run javascript.
 
-### Break down into end to end tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+You can set up your GitHub Pages to deploy.
+ This will allow you to ensure all of your sites are deployed automatically whenever you push to GitHub.
+
+In GitHub, go to your <username>.github.io repository and click Settings.
+
+Within Settings, go to the Source section within the Github Pages section. 
+From the dropdown menu, select master branch and  click Save. 
+
+Now, all of your repositories can be found at http://<username>.github.io/<repository-name>. 
+
+Now that your GitHub Pages site is set up, deploying new changes is easy. 
+Every time you make a change to your site, use the normal GitHub flow. 
+That is, use 
+```
+git commit 
+```
+and 
+```
+git push 
+```
+to send your changes to GitHub.
+ After this, the GitHub site should update within a few seconds. Just refresh the page in your browser, and you’re good to go!
 
 ## Built With
 
@@ -131,9 +137,6 @@ Add additional notes about how to deploy this on a live system
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
@@ -141,10 +144,6 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 
-I used the redame template from [PurpleBooth](https://github.com/PurpleBooth) for this readme file
+I used the readme template from [PurpleBooth](https://github.com/PurpleBooth) for this readme file
