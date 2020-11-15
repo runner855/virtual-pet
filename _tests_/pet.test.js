@@ -226,10 +226,12 @@ describe("adoptChild", () => {
 })
 
 it("create the parent object", () => {
+
+  pet.adoptChild(child);
+  
   expect(new Pet("Tom")).toBeInstanceOf(Object);
 
   
-
   
 
 
