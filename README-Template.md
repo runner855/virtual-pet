@@ -66,11 +66,11 @@ inside the directory you created for the project to initialize it as a git repos
 
 Run 
 
-to install Jest as a development depency
 ```
 
 npm install -D jest
 ```
+to install Jest as a development depency
 
 
 Run  
@@ -81,13 +81,7 @@ npm install
 
 to install the necessary libraries required for Node.js to run.
 
-And repeat
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
@@ -130,6 +124,7 @@ Add additional notes about how to deploy this on a live system
 - [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 - [Jest](https://jestjs.io/) - Used to test 
 - [npm](https://www.npmjs.com/) - Used to build the project
+- [Node.js](https://nodejs.org/en) 
 
 
 ## Contributing
