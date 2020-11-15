@@ -80,6 +80,16 @@ Pet.prototype.checkUp = function() {
   }
 };
 
+Pet.prototype.adoptChild = function(child) {
+
+    if (!this.isAlive) {
+        throw new Error('Your pet is no longer alive :(');
+      }
+
+      parent.children[0].feed();
+
+     }
+
 
 
 

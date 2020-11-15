@@ -178,7 +178,7 @@ describe("checkUp", () => {
 
   
 
-  it('throws an error if the pet is no longer alive', () => {
+  it("throws an error if the pet is no longer alive", () => {
     
 
     pet.age = 30;
@@ -212,5 +212,38 @@ describe("isAlive", () => {
     expect(pet.isAlive).toEqual(true);
   });
 
+describe("adoptChild", () => {
+
+    let pet;
+    let parent;
+    let child;
+    
+
+  beforeEach(() => {
+    pet = new Pet("Fido");
+    parent = new Pet("Tom");
+    child = new Pet("Flo");
+})
+
+it("create the parent object", () => {
+  expect(new Pet("Tom")).toBeInstanceOf(Object);
+
+  
+
+  
+
 
 });
+
+it("create the child object", () => {
+  expect(new Pet("Flo")).toBeInstanceOf(Object);
+});
+
+    it("throws an error if the pet is no longer alive", () => {
+
+    pet.age = 30;
+      
+      expect(() => pet.adoptChild()).toThrow('Your pet is no longer alive :(');
+    })
+  })
+})
